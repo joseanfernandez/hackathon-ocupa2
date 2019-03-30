@@ -42,6 +42,12 @@ a, p {
   align-items: center;
 }
 
+.wrapper-flexbox-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .invisible {
   display: none;
 }
@@ -73,4 +79,8 @@ button {
   cursor: pointer;
   background: #DEC523;
   color: #191F22;
+}
+
+li {
+  list-style: none;
 }

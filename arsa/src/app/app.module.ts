@@ -9,15 +9,18 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { AuthService } from './services/auth.service';
 import { ServerService } from './services/server.service';
 
+import { BotComponent } from './components/bot/bot.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LogComponent } from './components/log/log.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { BotComponent } from './components/bot/bot.component';
 import { RankingComponent } from './components/ranking/ranking.component';
-import { LogComponent } from './components/log/log.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { LogComponent } from './components/log/log.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    FontAwesomeModule
   ],
   providers: [
     AuthService,
