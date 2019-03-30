@@ -1,0 +1,14 @@
+<section>
+  <div>
+    <div *ngIf="auth.currentUser == null">
+      <app-login></app-login>
+    </div>
+    
+    <section *ngIf="auth.currentUser != null">
+      <app-nav></app-nav>
+      <router-outlet></router-outlet>
+    </section>
+    
+  </div>
+
+</section>

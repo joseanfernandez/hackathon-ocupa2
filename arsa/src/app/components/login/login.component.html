@@ -1,0 +1,24 @@
+<main>
+  <div id="wrapper">
+    <h1>ARSA</h1>
+    <form class="">
+      <input placeholder="Email address" type="text" [(ngModel)]="email" name="email">
+      <input placeholder="Password" type="password" [(ngModel)]="password" name="password">
+      <button (click)="signIn()" class="">Sign In</button>
+    </form>
+    <a (click)="register()">Not registered yet?</a>
+  </div>
+  <div id="register" class="" style="width: 300px">
+    <div class="">
+      <span>Sign Up</span>
+    </div>
+    <div class="content">
+      <form class="" style="text-align:center">
+        <input placeholder="Email address" type="email" [(ngModel)]="nemail" name="nemail">
+        <input placeholder="Name" type="text" [(ngModel)]="nname" name="nname">
+        <input placeholder="Password" type="password" [(ngModel)]="npassword" name="npassword">
+        <button (click)="signUp()" class="" style="margin-top:5px">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</main>
