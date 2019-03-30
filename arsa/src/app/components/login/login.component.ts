@@ -12,10 +12,10 @@ export class LoginComponent {
 
   email;
   password;
-  nname;
   nemail;
   npassword;
   error = false;
+  signed = true;
 
   constructor(private auth: AuthService,
               private router: Router) {

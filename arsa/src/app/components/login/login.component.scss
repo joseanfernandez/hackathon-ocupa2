@@ -1,0 +1,14 @@
+.wrapper-flexbox-column {
+  max-width: 350px;
+  img {
+    max-width: 33%;
+  }
+  a {
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+

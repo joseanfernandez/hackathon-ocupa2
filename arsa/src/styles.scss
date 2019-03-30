@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Coda|Roboto');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Coda';
+}
+
+a, p {
+  font-family: 'Roboto';
+}
+
+.accent-font {
+  color: #D5001C;
+}
+.accent-folor {
+  background-color: #D5001C;
+}
+
+.dark-font {
+  color: #191F22;
+}
+.dark-color {
+  background-color: #191F22;
+}
+
+.light-font {
+  color: #FAFAFA;
+}
+.light-color {
+  background-color: #FAFAFA;
+}
+
+.wrapper-flexbox-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+app-login {
+  height: 100vh;
+  display: grid;
+}
+
+input {
+  padding: 7px;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+button {
+  border: none;
+  padding: 7px 21px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background: #DEC523;
+  color: #191F22;
+}
