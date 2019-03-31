@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { faHashtag } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +12,13 @@ export class ServerService {
   ig = '/instagram/';
 
   constructor(private http: HttpClient) { }
+
+  // GENERAL
+  getHashtags() {
+    const url = '/hashtags';
+    return this.http.get(this.server_url + url);
+  }
+
 
   // TWITTER
   followTW(user_id, action) {
@@ -55,6 +61,22 @@ export class ServerService {
 
   likeIG(post_id, action) {
     const url = this.ig + 'like?id=' + post_id + '&action=' + action;
+    return this.http.get(this.server_url + url);
+  }
+
+  categoriaIG(category) {
+    const url = this.ig + 'getPosts/category?name=' + category;
+    console.log(this.server_url + url);
+    return this.http.get(this.server_url + url);
+  }
+
+  hashtagIG(hashtag) {
+    const url = this.ig + 'getPosts/hashtag?name=' + hashtag;
+    return this.http.get(this.server_url + url);
+  }
+
+  saveIG(hashtag) {
+    const url = this.ig + 'savePostsFromApi?name=' + hashtag + '&type=top_media';
     return this.http.get(this.server_url + url);
   }
 }

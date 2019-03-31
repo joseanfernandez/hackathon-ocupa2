@@ -9,33 +9,66 @@
       </li>
     </ul>
     <ul class="wrapper-flexbox-row">
-      <li class="wrapper-flexbox-row">
-        <div><fa-icon [icon]="faUsers"></fa-icon></div>
-        <div><fa-icon [icon]="faImage"></fa-icon></div>
+      <li class="wrapper-flexbox-row type">
+        <button *ngIf="type == 'user'" (click)="follow()">Follow</button>
+        <button *ngIf="socialNetwork == 'tw' && type == 'post'" (click)="retweet()">Retweet</button>
+        <button *ngIf="type == 'post'" (click)="like()">Like</button>
       </li>
+      <!--<li class="wrapper-flexbox-row type">
+        <div>
+          <fa-icon (click)="filterTY('post')" [class.accent-font]="type == 'post'" [icon]="faImage"></fa-icon>
+        </div>
+        <div>
+          <fa-icon (click)="filterTY('user')" [class.accent-font]="type == 'user'" [icon]="faUsers"></fa-icon>
+        </div>
+      </li>-->
       <li>
-        <select>
-          <option>All</option>
-          <option> hashtag.hashtag </option>
+        <select [(ngModel)]="ht" name="select" (ngModelChange)="onChangeHT($event)">
+          <option [value]="">All</option>
+          <option [value]="hashtag" *ngFor="let hashtag of hashtags">#{{ hashtag }} </option>
         </select>
       </li>
     </ul>
     <table>
       <thead>
-        <th *ngIf="type == 'post'"><fa-icon [icon]="faUser"></fa-icon></th>
-        <th *ngIf="type == 'post'"><fa-icon [icon]="faInfo"></fa-icon></th>
-        <th *ngIf="socialNetwork == 'tw'"><fa-icon [icon]="faRetweet"></fa-icon></th>
-        <th><fa-icon [icon]="faHeart"></fa-icon></th>
-        <th><fa-icon [icon]="faComment"></fa-icon></th>
-        <th *ngIf="hashtag == ''"><fa-icon [icon]="faHashtag"></fa-icon></th>
+        <th></th>
+        <th>
+          <fa-icon [icon]="faUser"></fa-icon>
+        </th>
+        <th *ngIf="type == 'post'">
+          <fa-icon [icon]="faInfo"></fa-icon>
+        </th>
+        <th *ngIf="socialNetwork == 'tw'">
+          <fa-icon [icon]="faRetweet"></fa-icon>
+        </th>
+        <th>
+          <fa-icon [icon]="faHeart"></fa-icon>
+        </th>
+        <th>
+          <fa-icon [icon]="faComment"></fa-icon>
+        </th>
+        <th *ngIf="ht == 'All'">
+          <fa-icon [icon]="faHashtag"></fa-icon>
+        </th>
       </thead>
+      <tbody>
+        <tr *ngFor="let post of posts; let i = index">
+          <td>{{ i+1 }}</td>
+          <!-- Typo on the server, too late to fix -->
+          <td *ngIf="socialNetwork == 'ig'">{{ post._source.userName }}</td>
+          <td *ngIf="socialNetwork == 'tw'">{{ post._source.screenName }}</td>
+          <td *ngIf="type == 'post'">{{ post._id }}</td>
+          <td *ngIf="socialNetwork == 'tw'">{{ post._source.retweetCount }}</td>
+          <td>{{ post._source.likeCount }}</td>
+          <!-- Typo on the server, too late to fix -->
+          <td *ngIf="socialNetwork == 'tw'">{{ post._source.replyCount }}</td>
+          <td *ngIf="socialNetwork == 'ig'">{{ post._source.commentsCount }}</td>
+          <td class="ht" (click)="filterHT(post._source.hashtag)" *ngIf="ht == 'All'">#{{ post._source.hashtag }}</td>
+        </tr>
+      </tbody>
     </table>
   </section>
   <section id="categories" class="wrapper-grid">
-    <!--<div (click)="filterCat('')" class="wrapper-flexbox-column" [class.selected-color]="category == ''">
-      <fa-icon [icon]="faGlobe" size="2x"></fa-icon>
-      <h4>All</h4>
-    </div>-->
     <div (click)="filterCat('fitness')" class="wrapper-flexbox-column" [class.selected-color]="category == 'fitness'">
       <fa-icon [icon]="faDumbbell" size="2x"></fa-icon>
       <h4>Fitness</h4>
@@ -56,7 +89,5 @@
       <fa-icon [icon]="faLaptop" size="2x"></fa-icon>
       <h4>Tech</h4>
     </div>
-    
   </section>
-
 </main>

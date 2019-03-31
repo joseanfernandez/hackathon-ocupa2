@@ -3,7 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  overflow-x: hidden;
   height: 100vh;
 }
 app-root {
@@ -114,4 +114,20 @@ ul{
   border-bottom: none;
   border-top-left-radius: 10%;
   border-top-right-radius: 10%;
+}
+
+.fitness {
+  background-color: #FF736E;
+}
+.food {
+  background-color: #49DA9A;
+}
+.travel {
+  background-color: #A3E048;
+}
+.tech {
+  background-color: #34BBE6;
+}
+.fashion {
+  background-color: #D23BE7;
 }

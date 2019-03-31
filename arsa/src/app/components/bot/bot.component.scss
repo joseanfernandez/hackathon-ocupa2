@@ -1,0 +1,14 @@
+.wrapper-flexbox-row{
+  height: 90%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.categories {
+  margin: 5%;
+}
+
+button:active {
+  color: #FAFAFA;
+  background-color: #191F22;
+}

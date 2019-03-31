@@ -7,6 +7,9 @@ main {
 
 #datatable {
   flex: 1;
+  .type {
+    justify-content: space-between;
+  }
   ul {
     width: 95%;
     li {
@@ -29,6 +32,8 @@ table {
   width: 95%;
   border-collapse: collapse;
   border-spacing: 0;
+  text-align: center;
+  font-family: 'Roboto';
   th, tr:nth-child(even) {
     background-color: #F3F3F3;
     padding: 5px;
@@ -65,4 +70,14 @@ table {
       width: 90%
     }
   }
+}
+
+.ht:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+button:active {
+  color: #FAFAFA;
+  background-color: #191F22;
 }

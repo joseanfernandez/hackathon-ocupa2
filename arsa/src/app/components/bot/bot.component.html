@@ -1,3 +1,8 @@
-<p>
-  bot works!
-</p>
+<section class="wrapper-grid categories" *ngFor="let category of categories">
+  <h1>{{ category }}</h1>
+  <div class="wrapper-flexbox-row">
+    <ng-container *ngFor="let ht of hashtags">
+      <button *ngIf="ht._source.category == category" [class]="ht._source.category" (click)="saveHT(ht._source.name)">{{ht._source.name}}</button> 
+    </ng-container>
+  </div>
+</section>

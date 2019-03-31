@@ -6,10 +6,10 @@ import { BotComponent } from './components/bot/bot.component';
 import { LogComponent } from './components/log/log.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'ranking', component: RankingComponent},
-  { path: 'bot', component: BotComponent},
-  { path: 'log', component: LogComponent},
+  { path: '', component: RankingComponent },
+  // { path: 'ranking', component: RankingComponent},
+  { path: 'admin', component: BotComponent},
+  // { path: 'log', component: LogComponent},
   { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
