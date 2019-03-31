@@ -1,3 +1,62 @@
-<p>
-  ranking works!
-</p>
+<main class="wrapper-flexbox-row">
+  <section id="datatable">
+    <ul class="wrapper-flexbox-row tabs">
+      <li (click)="filterSN('tw')" [class.shadow-color]="socialNetwork == 'tw'">
+        <fa-icon [icon]="faTwitter"></fa-icon>
+      </li>
+      <li (click)="filterSN('ig')" [class.shadow-color]="socialNetwork == 'ig'">
+        <fa-icon [icon]="faInstagram"></fa-icon>
+      </li>
+    </ul>
+    <ul class="wrapper-flexbox-row">
+      <li class="wrapper-flexbox-row">
+        <div><fa-icon [icon]="faUsers"></fa-icon></div>
+        <div><fa-icon [icon]="faImage"></fa-icon></div>
+      </li>
+      <li>
+        <select>
+          <option>All</option>
+          <option> hashtag.hashtag </option>
+        </select>
+      </li>
+    </ul>
+    <table>
+      <thead>
+        <th *ngIf="type == 'post'"><fa-icon [icon]="faUser"></fa-icon></th>
+        <th *ngIf="type == 'post'"><fa-icon [icon]="faInfo"></fa-icon></th>
+        <th *ngIf="socialNetwork == 'tw'"><fa-icon [icon]="faRetweet"></fa-icon></th>
+        <th><fa-icon [icon]="faHeart"></fa-icon></th>
+        <th><fa-icon [icon]="faComment"></fa-icon></th>
+        <th *ngIf="hashtag == ''"><fa-icon [icon]="faHashtag"></fa-icon></th>
+      </thead>
+    </table>
+  </section>
+  <section id="categories" class="wrapper-grid">
+    <!--<div (click)="filterCat('')" class="wrapper-flexbox-column" [class.selected-color]="category == ''">
+      <fa-icon [icon]="faGlobe" size="2x"></fa-icon>
+      <h4>All</h4>
+    </div>-->
+    <div (click)="filterCat('fitness')" class="wrapper-flexbox-column" [class.selected-color]="category == 'fitness'">
+      <fa-icon [icon]="faDumbbell" size="2x"></fa-icon>
+      <h4>Fitness</h4>
+    </div>
+    <div (click)="filterCat('food')" class="wrapper-flexbox-column" [class.selected-color]="category == 'food'">
+      <fa-icon [icon]="faUtensils" size="2x"></fa-icon>
+      <h4>Food</h4>
+    </div>
+    <div (click)="filterCat('travel')" class="wrapper-flexbox-column" [class.selected-color]="category == 'travel'">
+      <fa-icon [icon]="faCarSide" size="2x"></fa-icon>
+      <h4>Travel</h4>
+    </div>
+    <div (click)="filterCat('fashion')" class="wrapper-flexbox-column" [class.selected-color]="category == 'fashion'">
+      <fa-icon [icon]="faTshirt" size="2x"></fa-icon>
+      <h4>Fashion</h4>
+    </div>
+    <div (click)="filterCat('tech')" class="wrapper-flexbox-column" [class.selected-color]="category == 'tech'">
+      <fa-icon [icon]="faLaptop" size="2x"></fa-icon>
+      <h4>Tech</h4>
+    </div>
+    
+  </section>
+
+</main>

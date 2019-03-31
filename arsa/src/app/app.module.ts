@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -38,7 +39,8 @@ import { RankingComponent } from './components/ranking/ranking.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [
     AuthService,

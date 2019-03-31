@@ -6,6 +6,10 @@ html, body {
   width: 100vw;
   height: 100vh;
 }
+app-root {
+  width: 100vw;
+  height: 100vh;
+}
 h1, h2, h3, h4, h5 {
   font-family: 'Coda';
 }
@@ -13,49 +17,6 @@ h1, h2, h3, h4, h5 {
 a, p {
   font-family: 'Roboto';
 }
-
-.accent-font {
-  color: #D5001C;
-}
-.accent-folor {
-  background-color: #D5001C;
-}
-
-.dark-font {
-  color: #191F22;
-}
-.dark-color {
-  background-color: #191F22;
-}
-
-.light-font {
-  color: #FAFAFA;
-}
-.light-color {
-  background-color: #FAFAFA;
-}
-
-.wrapper-flexbox-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper-flexbox-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.invisible {
-  display: none;
-}
-
-.visible {
-  display: flex;
-}
-
 app-login {
   height: 100vh;
   display: grid;
@@ -83,4 +44,74 @@ button {
 
 li {
   list-style: none;
+}
+
+ul{
+  padding: 0;
+}
+
+.accent-font {
+  color: #D5001C;
+}
+.accent-color {
+  background-color: #D5001C;
+}
+
+.shadow-font {
+  color: #F3F3F3;
+}
+
+.shadow-color {
+  background-color: #F3F3F3;
+}
+
+.dark-font {
+  color: #191F22;
+}
+.dark-color {
+  background-color: #191F22;
+}
+
+.light-font {
+  color: #FAFAFA;
+}
+.light-color {
+  background-color: #FAFAFA;
+}
+
+.selected-color {
+  border: 1px solid #DEC523!important;
+  background-color: #DEC523;
+  color: #FAFAFA;
+}
+
+.wrapper-flexbox-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-flexbox-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wrapper-grid {
+  display: grid;
+}
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.tabs {
+  border: #F3F3F3 solid 1px;
+  border-bottom: none;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
 }
